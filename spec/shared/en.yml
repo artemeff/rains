@@ -1,0 +1,6 @@
+---
+en:
+  assertion:
+    user/is_adult:
+      truthy: "User is an adult (age %{age})"
+      falsey: "User is a child (age %{age})"
