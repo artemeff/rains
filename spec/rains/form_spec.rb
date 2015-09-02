@@ -1,34 +1,36 @@
 describe Rains::Form do
   include_context 'preloaded translations'
 
-  module User
-    class IsAdult < Rains::Assertion
-      attribute :age
+  before do
+    module User
+      class IsAdult < Rains::Assertion
+        attribute :age
 
-      def check
-        return true if age.nil?
+        def check
+          return true if age.nil?
 
-        age >= 18
+          age >= 18
+        end
       end
-    end
 
-    class IsNameValid < Rains::Assertion
-      attribute :name
+      class IsNameValid < Rains::Assertion
+        attribute :name
 
-      def check
-        (3..20).include?(name.size)
+        def check
+          (3..20).include?(name.size)
+        end
       end
-    end
 
-    class Form < Rains::Form
-      attribute :name, String
-      attribute :age, Integer, required: false
+      class Form < Rains::Form
+        attribute :name, String
+        attribute :age, Integer, required: false
 
-      assertions IsAdult, IsNameValid
+        assertions IsAdult, IsNameValid
+      end
     end
   end
 
-  after(:all) { Object.send(:remove_const, :User) }
+  after { Object.send(:remove_const, :User) }
 
   context '#validate' do
     it 'returns truthy state' do
