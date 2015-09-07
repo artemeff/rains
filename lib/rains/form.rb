@@ -11,7 +11,7 @@ module Rains
       cached = as_form
       truthy = ::Assertion::State.new(true)
 
-      assertions.inject(truthy) do |acc, assertion|
+      __assertions__.inject(truthy) do |acc, assertion|
         acc + assertion[cached]
       end
     end
