@@ -4,3 +4,13 @@ en:
     user/is_adult:
       truthy: "User is an adult (age %{age})"
       falsey: "User is a child (age %{age})"
+
+  service:
+    user:
+      enhanced_create:
+        create_error: something went wrong
+
+  rains:
+    test:
+      nested:
+        named_entity: 'test named entity'
