@@ -14,13 +14,13 @@ describe Rains::Serializer do
     it 'returns json string' do
       serializer = User::Serializer.new(name: 'john', age: 21)
 
-      expect(serializer.to_json).to eq(%q[{"name":"john","age":21}])
+      expect(serializer.to_json).to eq('{"name":"john","age":21}')
     end
 
     it 'uses as interface to json libs' do
       serializer = User::Serializer.new(name: 'john', age: 21)
 
-      expect(JSON.dump(serializer)).to eq(%q[{"name":"john","age":21}])
+      expect(JSON.dump(serializer)).to eq('{"name":"john","age":21}')
     end
   end
 end
