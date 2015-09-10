@@ -1,0 +1,24 @@
+inherit_from: .rubocop_todo.yml
+
+# Who needs documentation?
+Style/Documentation:
+  Enabled: false
+
+# RSpec styles
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  FunctionalMethods:
+    - let
+    - let!
+    - subject
+    - before
+    - after
+
+# Don't introduce semantic fail/raise distinction
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# Mutant fails when change /\// to %r{\/}
+Style/RegexpLiteral:
+  Exclude:
+    - 'lib/rains/dsl/translation.rb'
