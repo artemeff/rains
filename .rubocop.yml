@@ -22,3 +22,8 @@ Style/SignalException:
 Style/RegexpLiteral:
   Exclude:
     - 'lib/rains/dsl/translation.rb'
+
+# Fix for LoadError on travis
+Lint/HandleExceptions:
+  Exclude:
+    - 'rakelib/rubocop.rake'
