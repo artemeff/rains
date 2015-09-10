@@ -2,6 +2,7 @@ language: ruby
 addons:
   code_climate:
     repo_token: f4f81d748a096e09c69653599c0bc5770c58f42be42c0db5ee2c71fc8835ff9c
+bundler_args: --without tools
 script: bundle exec rake
 rvm:
   - 2.0
