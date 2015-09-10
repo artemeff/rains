@@ -2,24 +2,25 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'rains/version'
 
-Gem::Specification.new do |spec|
-  spec.name          = 'rains'
-  spec.version       = Rains::VERSION
-  spec.authors       = ['Yuri Artemev']
-  spec.email         = ['i@artemeff.com']
+Gem::Specification.new do |gem|
+  gem.name          = 'rains'
+  gem.version       = Rains::VERSION
+  gem.authors       = ['Yuri Artemev']
+  gem.email         = ['i@artemeff.com']
+  gem.summary       = 'Gem for doing OOP the right way'
+  gem.description   = 'Contains some useful techniques and best-practices'
+  gem.homepage      = 'https://github.com/artemeff/rains'
+  gem.license       = 'MIT'
+  gem.require_paths = ['lib']
 
-  spec.summary       = %q{Gem for doing OOP the right way}
-  spec.description   = %q{Contains some useful techniques and best-practices}
-  spec.homepage      = 'https://github.com/artemeff/rains'
-  spec.license       = 'MIT'
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
-  spec.files         = `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.require_paths = ['lib']
+  gem.add_runtime_dependency 'virtus', '~> 1.0'
+  gem.add_runtime_dependency 'assertion', '~> 0.2'
+  gem.add_runtime_dependency 'inflecto', '~> 0.0'
 
-  spec.add_runtime_dependency 'virtus', '~> 1.0'
-  spec.add_runtime_dependency 'assertion', '~> 0.2'
-
-  spec.add_development_dependency 'bundler', '~> 1.10'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec'
+  gem.add_development_dependency 'bundler', '~> 1.10'
+  gem.add_development_dependency 'rake', '~> 10.3'
+  gem.add_development_dependency 'rspec', '~> 3.3'
 end
