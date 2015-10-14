@@ -55,11 +55,5 @@ describe Rains::Form do
 
       expect(result.valid?).to eq(true)
     end
-
-    it 'throws error when required attribute not provided' do
-      expect {
-        User::Form.new
-      }.to raise_error(Virtus::CoercionError)
-    end
   end
 end

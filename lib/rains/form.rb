@@ -1,7 +1,7 @@
 module Rains
   class Form
     extend DSL::Assertions
-    include Virtus.model(strict: true)
+    include Virtus.model
 
     def as_form
       attributes
