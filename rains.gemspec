@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
+  gem.add_runtime_dependency 'i18n', '~> 0.7.0'
   gem.add_runtime_dependency 'virtus', '~> 1.0'
   gem.add_runtime_dependency 'assertion', '~> 0.2'
   gem.add_runtime_dependency 'inflecto', '~> 0.0'

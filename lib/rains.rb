@@ -1,3 +1,4 @@
+require 'i18n'
 require 'json'
 require 'virtus'
 require 'inflecto'
